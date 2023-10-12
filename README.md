@@ -7,6 +7,11 @@ https://dev.to/briancaffey/on-demand-serverless-valheim-server-setup-with-aws-cd
 
 https://developer.valvesoftware.com/wiki/SteamCMD#Linux
 
+https://aws.amazon.com/blogs/gametech/hosting-your-own-dedicated-valheim-server-in-the-cloud/
+https://lunajacob.medium.com/dedicated-valheim-server-built-with-terraform-gcp-caca8a64fd3b
+https://github.com/kpenfound/valheim-server
+https://michaeljherold.com/articles/provisioning-a-valheim-server-with-terraform/
+https://github.com/ElijahGartin/valheim-dedicated-server-aws
 ## Scripts
 
 ### Install Script
