@@ -3,6 +3,7 @@
 ## Links
 
 https://valheim.fandom.com/wiki/Valheim_Dedicated_Server
+https://dev.to/briancaffey/on-demand-serverless-valheim-server-setup-with-aws-cdk-discord-interactions-and-gitlab-ci-58pj
 
 https://developer.valvesoftware.com/wiki/SteamCMD#Linux
 
