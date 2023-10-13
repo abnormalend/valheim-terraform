@@ -8,4 +8,17 @@ resource "aws_instance" "valheim" {
     Name = "ValheimServer"
   }
   vpc_security_group_ids = [ aws_security_group.valheim_security.id ]
+
+  user_data = <<EOF
+#!/bin/sh
+
+add-apt-repository multiverse
+apt install software-properties-common -y
+dpkg --add-architecture i386
+apt update
+apt install lib32gcc-s1 steamcmd -y
+mkdir -p /opt/valheim
+steamcmd +@sSteamCmdForcePlatformType linux +force_install_dir /opt/valheim +login anonymous +app_update 896660 -beta none validate +quit
+
+EOF
 }
