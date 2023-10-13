@@ -12,6 +12,8 @@ resource "aws_instance" "valheim" {
   user_data = <<EOF
 #!/bin/sh
 
+echo "Hey everybody"
+
 add-apt-repository multiverse
 apt install software-properties-common -y
 dpkg --add-architecture i386
@@ -21,4 +23,5 @@ mkdir -p /opt/valheim
 steamcmd +@sSteamCmdForcePlatformType linux +force_install_dir /opt/valheim +login anonymous +app_update 896660 -beta none validate +quit
 
 EOF
+  user_data_replace_on_change = true
 }
