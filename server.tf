@@ -7,5 +7,5 @@ resource "aws_instance" "valheim" {
   tags = {
     Name = "ValheimServer"
   }
-  security_groups = [aws_security_group.valheim_security]
+  security_groups = [aws_security_group.valheim_security.id]
 }
