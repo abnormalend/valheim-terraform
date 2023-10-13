@@ -13,6 +13,9 @@ resource "aws_instance" "valheim" {
 #!/bin/sh
 
 echo "Hey everybody"
+
+echo "\$nrconf{restart} = 'a';" >> /etc/needrestart/needrestart.conf
+
 deb http://deb.debian.org/debian bullseye main contrib non-free
 deb-src http://deb.debian.org/debian bullseye main contrib non-free
 
@@ -25,6 +28,10 @@ deb-src http://deb.debian.org/debian bullseye-updates main contrib non-free
 apt install software-properties-common
 dpkg --add-architecture i386
 apt update
+
+echo steam steam/question select "I AGREE" | sudo debconf-set-selections
+echo steam steam/license note '' | sudo debconf-set-selections
+
 apt install lib32gcc-s1 steamcmd -y
 
 mkdir -p /opt/valheim
