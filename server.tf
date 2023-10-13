@@ -13,12 +13,20 @@ resource "aws_instance" "valheim" {
 #!/bin/sh
 
 echo "Hey everybody"
+deb http://deb.debian.org/debian bullseye main contrib non-free
+deb-src http://deb.debian.org/debian bullseye main contrib non-free
 
-add-apt-repository multiverse
-apt install software-properties-common -y
+deb http://deb.debian.org/debian-security/ bullseye-security main contrib non-free
+deb-src http://deb.debian.org/debian-security/ bullseye-security main contrib non-free
+
+deb http://deb.debian.org/debian bullseye-updates main contrib non-free
+deb-src http://deb.debian.org/debian bullseye-updates main contrib non-free
+
+apt install software-properties-common
 dpkg --add-architecture i386
 apt update
 apt install lib32gcc-s1 steamcmd -y
+
 mkdir -p /opt/valheim
 steamcmd +@sSteamCmdForcePlatformType linux +force_install_dir /opt/valheim +login anonymous +app_update 896660 -beta none validate +quit
 
