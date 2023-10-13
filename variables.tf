@@ -10,5 +10,10 @@ variable "tags" {
   default = {
     project = "valheim-terraform"
   }
+}
 
+variable "instance_type" {
+  description = "What type of instance to deploy"
+  type = string
+  default = "t3a.small"
 }
