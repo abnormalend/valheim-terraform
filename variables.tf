@@ -15,7 +15,7 @@ variable "tags" {
 variable "instance_type" {
   description = "What type of instance to deploy"
   type = string
-  default = "t3.large"
+  default = "t3.medium"
 }
 
 variable "hosted_zone" {
