@@ -1,0 +1,1 @@
+These files should get placed in the S3 bucket for use by the valheim server.
