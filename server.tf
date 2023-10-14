@@ -5,8 +5,10 @@ resource "aws_instance" "valheim" {
   instance_type = var.instance_type
 
   instance_market_options {
+    market_type = spot
     spot_options {
       max_price = 0.03
+      instance_interruption_behavior = stop
     }
   }
 
