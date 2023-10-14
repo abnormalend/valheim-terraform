@@ -9,6 +9,8 @@ resource "aws_instance" "valheim" {
   }
   vpc_security_group_ids = [ aws_security_group.valheim_security.id ]
 
+  iam_instance_profile = aws_iam_instance_profile.valheim_profile.id
+
   user_data = <<EOF
 #!/bin/sh
 
@@ -53,4 +55,28 @@ reboot
 EOF
 
   user_data_replace_on_change = true
+}
+
+resource "aws_iam_instance_profile" "valheim_profile" {
+  name = "valheim_profile"
+  role = aws_iam_role.role.name
+}
+
+resource "aws_iam_role" "valheim_role" {
+  name               = "valheim_role"
+  path               = "/"
+  assume_role_policy = data.aws_iam_policy_document.assume_role.json
+}
+
+data "aws_iam_policy_document" "assume_role" {
+  statement {
+    effect = "Allow"
+
+    principals {
+      type        = "Service"
+      identifiers = ["ec2.amazonaws.com"]
+    }
+
+    actions = ["sts:AssumeRole"]
+  }
 }

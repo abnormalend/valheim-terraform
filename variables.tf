@@ -15,5 +15,5 @@ variable "tags" {
 variable "instance_type" {
   description = "What type of instance to deploy"
   type = string
-  default = "t3a.small"
+  default = "t3.large"
 }
