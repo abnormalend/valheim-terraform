@@ -58,7 +58,7 @@ resource "aws_iam_role_policy" "r53_access" {
 data "aws_iam_policy_document" "self_access" {
     statement {
         effect = "Allow"
-        actions = "ec2:*"
+        actions = ["ec2:*"]
         resources = [aws_instance.valheim.arn]
     }
 }
