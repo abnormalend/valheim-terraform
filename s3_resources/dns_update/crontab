@@ -1,1 +1,0 @@
-@reboot minecraft python3 /opt/minecraft_aws_tools/dns_updater/dns_updater.py

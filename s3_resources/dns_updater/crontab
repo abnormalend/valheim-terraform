@@ -1,0 +1,1 @@
+@reboot valheim python3 /opt/tools/dns_updater/dns_updater.py
