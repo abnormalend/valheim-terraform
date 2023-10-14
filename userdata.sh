@@ -33,7 +33,7 @@ mkdir -p /opt/tools
 aws s3 sync s3://$s3_bucket/resources/ /opt/tools
 chown $user_group -R /opt/tools
 
-source /opt/tools/master_installer.sh
+/bin/bash /opt/tools/master_installer.sh
 
 /usr/games/steamcmd +@sSteamCmdForcePlatformType linux \
                     +force_install_dir $valheim_dir \
