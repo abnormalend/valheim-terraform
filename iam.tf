@@ -26,7 +26,7 @@ data "aws_iam_policy_document" "s3_access" {
     statement {
       effect = "Allow"
       actions = ["s3:*"]
-      resources = [aws_s3_bucket.bucket.arn]
+      resources = [aws_s3_bucket.bucket.arn, "${aws_s3_bucket.bucket.arn}/*"]
     }
 }
 
