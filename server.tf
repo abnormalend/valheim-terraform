@@ -12,10 +12,12 @@ resource "aws_instance" "valheim" {
 
   tags = {
     Name = "ValheimServer"
-    env-s3bucket = aws_s3_bucket.bucket.bucket
+    env-s3bucket = aws_s3_bucket.bucket.id
+    dns_hostname = "valheim"
+    dns_zone = var.hosted_zone
   }
-  vpc_security_group_ids = [ aws_security_group.valheim_security.id ]
 
+  vpc_security_group_ids = [ aws_security_group.valheim_security.id ]
   iam_instance_profile = aws_iam_instance_profile.valheim_profile.id
 
   user_data = <<EOF
@@ -65,28 +67,4 @@ EOF
 
 
   
-}
-
-resource "aws_iam_instance_profile" "valheim_profile" {
-  name = "valheim_profile"
-  role = aws_iam_role.valheim_role.name
-}
-
-resource "aws_iam_role" "valheim_role" {
-  name               = "valheim_role"
-  path               = "/"
-  assume_role_policy = data.aws_iam_policy_document.assume_role.json
-}
-
-data "aws_iam_policy_document" "assume_role" {
-  statement {
-    effect = "Allow"
-
-    principals {
-      type        = "Service"
-      identifiers = ["ec2.amazonaws.com"]
-    }
-
-    actions = ["sts:AssumeRole"]
-  }
 }

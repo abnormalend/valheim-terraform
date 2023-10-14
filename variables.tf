@@ -17,3 +17,9 @@ variable "instance_type" {
   type = string
   default = "t3.large"
 }
+
+variable "hosted_zone" {
+  description = "What DNS Zone in R53 are we using for the install"
+  type = string
+  default = "aws.rgrs.xyz."
+}
