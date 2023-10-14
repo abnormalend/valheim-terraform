@@ -59,7 +59,7 @@ EOF
 
 resource "aws_iam_instance_profile" "valheim_profile" {
   name = "valheim_profile"
-  role = aws_iam_role.role.name
+  role = aws_iam_role.valheim_role.name
 }
 
 resource "aws_iam_role" "valheim_role" {
