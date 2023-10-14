@@ -9,6 +9,7 @@ resource "aws_instance" "valheim" {
     spot_options {
       max_price = 0.03
       instance_interruption_behavior = "stop"
+      spot_instance_type = "persistent"
     }
   }
 
