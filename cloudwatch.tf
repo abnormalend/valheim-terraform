@@ -11,6 +11,7 @@ resource "aws_cloudwatch_metric_alarm" "shutdown" {
   namespace = "Valheim"
   statistic = "Maximum"
   threshold = 1
+  period = 120
   actions_enabled = true
   alarm_actions = []
 }
