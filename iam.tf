@@ -79,7 +79,9 @@ resource "aws_iam_role_policy" "self_access" {
     policy = data.aws_iam_policy_document.self_access.json
 }
 
-resource "aws_iam_policy_attachment" "cloudwatch_access" {
-    name = "cloudwatch_access"
-    policy_arn = data.aws_iam_policy.cloudwatch_policy.arn
+
+
+resource "aws_iam_role_policy_attachment" "cloudwatch_access" {
+  role = aws_iam_role.valheim_role.name
+  policy_arn = data.aws_iam_policy.cloudwatch_policy.arn
 }
