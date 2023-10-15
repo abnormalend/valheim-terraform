@@ -13,5 +13,5 @@ resource "aws_cloudwatch_metric_alarm" "shutdown" {
   threshold           = 1
   period              = 120
   actions_enabled     = true
-  alarm_actions       = ["arn:aws:swf:${data.aws_region.current.name}:${data.aws_caller_identity.current.account_id}:action/actions/AWS_EC2.${aws_instance.valheim.id}.Stop/1.0"]
+  alarm_actions       = ["arn:aws:automate:${data.aws_region.current.name}:ec2:stop"]
 }
