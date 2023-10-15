@@ -9,6 +9,9 @@ ExecStart=/opt/valheim/valheim_server.x86_64 -name "VikingSuperFriends" -port 24
 StandardOutput=syslog
 StandardError=syslog
 SyslogIdentifier=valheim
+WorkingDirectory=/opt/valheim
+User=valheim
+Group=valheim
 
 [Install]
 WantedBy=multi-user.target

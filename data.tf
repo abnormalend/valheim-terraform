@@ -1,6 +1,6 @@
 data "aws_vpc" "default" {
   default = true
-} 
+}
 
 data "aws_ami" "ubuntu" {
   most_recent = true

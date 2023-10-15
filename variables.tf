@@ -14,12 +14,12 @@ variable "tags" {
 
 variable "instance_type" {
   description = "What type of instance to deploy"
-  type = string
-  default = "t3.medium"
+  type        = string
+  default     = "t3.medium"
 }
 
 variable "hosted_zone" {
   description = "What DNS Zone in R53 are we using for the install"
-  type = string
-  default = "aws.rgrs.xyz."
+  type        = string
+  default     = "aws.rgrs.xyz."
 }
