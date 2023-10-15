@@ -1,1 +1,1 @@
-*/5 * * * * valheim /bin/sh /opt/tools/metrics/collect.sh
+* * * * * valheim /bin/sh /opt/tools/metrics/collect.sh
