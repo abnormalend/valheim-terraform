@@ -47,5 +47,6 @@ chown $user_group -R $valheim_dir
 # make sure everything is up to date
 apt upgrade -y
 
+
 # Must be the end, nothing else will happen after this
 reboot
